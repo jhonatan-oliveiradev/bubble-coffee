@@ -1,4 +1,56 @@
 @import "@/styles/mixins.scss";
 @import "@/styles/variables.scss";
 
-.
+/**/
+.social {
+	@include max-width;
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 6rem;
+	max-height: 48rem;
+	background-color: $primary;
+	scroll-margin-top: 25rem;
+
+	@include device(notebook) {
+		padding: 6rem 3rem;
+	}
+
+	@include device(tablet) {
+		justify-content: center;
+	}
+
+	.content {
+		max-width: 50rem;
+		display: flex;
+		flex-direction: column;
+
+		@include device(tablet) {
+			align-items: center;
+			text-align: center;
+		}
+
+		h2 {
+			text-transform: uppercase;
+		}
+
+		p {
+			margin-top: 2rem;
+			margin-bottom: 8rem;
+
+			@include device(mobile) {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+
+	.image {
+		filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+		-webkit-filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+		margin-top: -10rem;
+
+		@include device(tablet) {
+			display: none;
+		}
+	}
+}

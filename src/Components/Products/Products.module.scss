@@ -1,4 +1,19 @@
 @import "@/styles/mixins.scss";
 @import "@/styles/variables.scss";
 
-.
+/**/
+.products {
+	@include max-width;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+	scroll-margin-top: 25rem;
+
+	@include device(notebook) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include device(mobile) {
+		grid-template-columns: 1fr;
+		grid-gap: 4rem;
+	}
+}
